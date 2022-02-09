@@ -1,0 +1,91 @@
+Ch 3 - Branching
+
+		3.1 - Intro -
+Branching: diverging from main line of dev to work so changes don't effect main line
+	Git branching is lightweight and easy
+Git Branching: light/moveable pointer to a commit
+	default main branch = "master", each commit the master branch pointer moves forward
+Head: pointer to branch you're currently on
+
+How git stores data - series of snapshots, each commit has a pointer to the snapshot
+obj also has name, emal, msg and alother pointers
+
+Parent: commit directly before current commit
+	Initial commit = 0 parents
+	Normal commit = 1 paretn
+	merge 2+ branches = 2+ parents
+Blob: staged files' checksumm stored in git repo
+
+creating a branch creates a new pointer to your current commit
+switching branches - git checkout
+
+Commands:
+branch -> checkout -> commit
+log (commit history)
+
+
+		3.2 - Basics/Merging -
+If the working directory or staging area has uncommitted changes that conflict with
+branch you're checkingout git WON'T LET YOU SWITCH BRANCHES
+	clean working state to switch branches
+	essentially you need to commit all changes before moving back
+
+Merging with more than one parent means you need to $checkout before you merge
+What happens: another snapshot is created in your branch, that one is then merged
+with the most recent one in master. Then you can delete the branch you were working on
+
+If ur branch changes conflic with master changes you can't merge. You have to manualy choose
+what sections you want to keep and lose
+
+
+Commands:
+shorthand: $git checkout -b branchName
+	$ branch BN
+	$ checkout BN
+$git merge branchName
+$git branch -d branchName (delete)
+
+		3.3 - Branch Managemnt -
+--[no-]merged: see what you have/haven't merged into
+$branch: * in front of BranchName means thats the ones you're looking at
+
+Rnaming branches: $ git branch --move bad-branch-name corrected-branch-name
+	this is only local, you need to push to update that
+	$ git push --set-upstream origin corrected-branch-name
+	Then just delete bad brnach name
+There is a way to rename the master branch but WHY would you go from master to main?
+
+		3.4 - workflow -
+Master branch ususally will contain perfect code or even jsut released code
+then there is a branch called next/developed ro soemthing that is stuff you're working on next
+They get closer to main the more tested they get
+
+		3.5 - remote branches -
+Remote tracking branches: refs to st of rem branches, unmoveable local refs
+	git moves them when you do network communication to make sure they acutally rep
+	the st of the remote repo
+	-  bookmarks, to remind you where the branches in your remote repositories were 
+		the last time you connected to them
+$git fetch will update what is on your remote system with the company
+
+Your sys didn't auto linke with base sys, you have to push what you want added
+	this lets you work on proivate stuff and only push important stuff
+Tracking branches: local bracnhes w/ direct relationship to remote branch
+	pulling from a tracking bracnh means git knows which server to fetch from
+	and what branch to merge to
+
+Commands:
+-vv (what tracking branches are set up)
+
+		3.6 - rebasing -
+another way to integreate changes
+takes changes committed in 1 branch and replay them on a different one
+cleaner history
+if you have a branch off a branch, you can merge that secondary branch straight into main
+**Do not rebase commits that exist outside your repository and that people may have based work on.**
+Generally: rebase local stuff for it to be lcean but never rebase stuff you've pushed
+
+
+
+
+

@@ -1,0 +1,74 @@
+Git Chapter 2
+
+		2.1 - Basics
+2 ways to get a git repository 
+1. take local directory not under version ctrl and turn it into a git repo
+2. clode existsing git repo from elsewhere
+
+there are command lines here that tell you how to do that
+
+You don't "get" a repository in just any way: you CLONE it.
+
+		2.2 - recording changes
+Commands: add, status, .gitignore, commit, rm (remove)
+	Fancy: git commit -a (adds all tracked without going through staging and add)
+working directory files can be TRACKED or UNTRACKED
+Tracked - iles in the last snapshot, newly staged files
+	can be modded, unmodded, or staged
+	Git knows about these files
+Untracked - everything else, fines in working direocotry
+	that aren't in last snapshot or staging area
+
+master - the main brach to which things diverge from
+git add - if you add a file, then modify it, the unmodded viersion will still be the
+	one added, you have to add it again to get the newest version
+
+?? = not tracked
+A = new to staging
+M = modified
+MM = modified, staged, modded again
+
+viewing staged vs unstaged
+(--stages == --cached)
+git diff - what have you changed but not staged, and whats staged but not committed
+
+		2.3 - commit history
+Commands: log, -p/--patch, --stat, --pretty
+
+log gives you the hisotyr, pathc gies yout he history and the diff
+there are lots of different ways to see the histyr and the edits made,
+there are lots of ways to make things very pretty in those prints as well
+	diff information and stuff
+
+		2.4 - unding things
+commands --ammend, reset HEAD
+you can add stuff you forgot to a commit and them ammed it, sorta like a re commit
+
+		2.5 - remote
+You need to be able to add/remove remote repos
+you can see the stuff you have with git remote
+fetching gets data from remote projects
+
+pul - automatically fetch and merge remote branch to current branch,
+clone atuo sets up local master to trach remote master
+
+		2.6 - tagging
+git tag - lists tags
+two types: lightweight, annotated
+lightweight - like branch that doesnt change, points to a specific commit
+annotated - full objects in git, checksumed, have name, email, date, message
+	can be sightend and verified (recommended)
+tagging can happen after the fact
+
+git push does NOT asuto push tags to remote servers, this is manual
+tags can be deleted
+git checkout tag is a way to see what files the tag is pointing to
+
+		2.7 - aliases
+you can rename the command so that you don't have to type as much
+you can also sorta create a command by descriving it with an alias
+external commands start with !
+
+
+
+

@@ -1,0 +1,46 @@
+Git Stuff 
+
+Ch 1 - About version control
+		1.1 - version control
+Version control - system taht records changes to a [set of] files so you can see
+	all the versions later
+VC System - helps you track all the changes with little overhead
+Local VCS - copy a file into another irectory, but prone to human error with copying
+	files to/from wrong directories
+	UPDATE: vscs have a simple local database that keep all changes
+RSC - keep patch sets (diffs in filesO in a special format on the disk
+	can recreate files at any time this way
+Centralized VCS (standard way) - single server contains all versiond files,
+	clients take from there
+	Everyone knows what everyone else is doing
+	Admins have ctrl over who does what
+	BUT: single pt of failure, lose the server, lose it all
+Distributed VCS (git) - clients mirror the repositor, including full history
+	every client is essentally a backup
+
+		1.2 - History
+goals in mind: speed, simple design, strong support for non-linear dev, 
+	fully distributed, can do large projects
+
+		1.3 whats git?
+Data storage is like snapshots of a mini file sys. 
+The full system is saved on each version but if the files haven't changed
+	then they don't store it again
+git = mini file system
+Its all local so no latency - god speed
+	this also allows to work offline easy
+
+Integrity via sha-1 HASH mapping
+Hard to remove data from git, you generally only add stuff
+
+STAGES OF GIT
+modified - changed file but not committed
+staged - marked modded file in curr version to go into the next commit 
+	marked for next commit
+commited - data is stored in local database
+
+		1.4 - command line
+
+
+
+

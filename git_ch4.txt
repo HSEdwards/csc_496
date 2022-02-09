@@ -1,0 +1,19 @@
+Ch 4
+		4.1 - protocols -
+remoter reop = bare repo: git repo w/ no woking directoyr, just collab pt
+Transfer Data:
+Local - remoter repo in other directory on same hose
+	shared file system
+	Pro- simple, easy, quick pulls 	Cons - harder from multi locations, not fastses 
+	if not local
+HTTP - like ssh or git, single url, to push you need a username and pass, 
+	Pros - single url and user/pass make use easy, efficant, encrypt content transfer
+	firewall protection
+	cons - harder to set up than ssh, giving creds can be more complicated at times
+Secure Shell (SSH) - ssh access to servers is ustally set up and if not is easy to, no username
+	pros - easy to set op, secure, efficent
+	cons - no anon access ppl must have ssh acces to ur machine (can be read only)
+	not good for open souce
+Git - comes iwth git, has dedicated port, simlar to ssh, no authentication, no pushing
+	pros - fastest
+	cons - no authenticication
